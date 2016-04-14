@@ -1,10 +1,9 @@
-class User
+class User < ActiveRecord::Base
   has_secure_password
 
-  validates_presence_of :username
-  validates_presence_of :password
-  validates_uniqueness_of :username
-  validates_uniqueness_of :password
+  validates :username, presence: true, uniqueness: true
+  validates :password, presence: true
+  
   # has_many rewards
 
   # enum role: %w(default admin)
