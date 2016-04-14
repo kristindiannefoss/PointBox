@@ -39,7 +39,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
   gem 'capybara'
-  gem 'launcy'
+  gem 'launchy'
 end
 
 group :development do
