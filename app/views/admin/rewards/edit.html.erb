@@ -1,0 +1,9 @@
+<h1>Edit Reward</h1>
+
+<%= form_for @reward, url: {:controller=>'admin/rewards', :action=>'update'} do |f| %>
+
+  <%= f.text_field :name, placeholder: "name" %>
+  <%= f.text_field :value, placeholder: "value" %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,7 +1,9 @@
 <h1>Please Sign In Or <%= link_to "Create Account", new_user_path %></h1>
 
+<center>
 <%= form_for(:session, url: login_path) do |f| %>
   <%= f.text_field :username, placeholder: "username" %>
   <%= f.password_field :password, placeholder: "password" %>
   <%= f.submit "Login" %>
 <% end %>
+</center>
