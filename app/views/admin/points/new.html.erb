@@ -1,0 +1,12 @@
+<center>
+<h1> Assign Points </h1>
+
+<%= form_for @point, url:{:controller=>'admin/points', :action=>'create'} do |f| %>
+<%= render partial: "shared/errors", locals: { target: @point } %>
+
+  <%= f.text_field :value, placeholder: "value" %>
+  <%= f.password_field :user_id, placeholder: "user id" %>
+
+  <%= f.submit "Assign" %>
+<% end %>
+</center>

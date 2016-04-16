@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   namespace "admin" do
     resources :rewards
     resources :users, only: [:show, :index]
+    resources :points, only: [:new, :create]
   end
 
   get '/login', to: 'sessions#new'

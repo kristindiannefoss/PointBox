@@ -1,7 +1,8 @@
-<h1> Admin Users Index </h1>
+<center>
+<h1>Welcome, <%= @user.username %></h1>
 
-<ul>
-  <%= @users.each do |user| %>
-    <li><%= link_to user.username, admin_user_path(user) %> Points</li>
-    <% end %>
-</ul>
+<h3>My Spent Points</h3>
+<h3>My Unspent Points</h3>
+
+<h3>My Rewards</h3>
+</center>
