@@ -9,7 +9,8 @@ RSpec.feature "User purchases a reward" do
       reward = Reward.create(name: "Cake", value: 2)
 
       points = Point.create(value: 10, user_id: user.id)
-# byebug
+
+byebug
       visit rewards_path
       click_button "Purchase"
       save_and_open_page
