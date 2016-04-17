@@ -1,11 +1,13 @@
 class RewardsController < ApplicationController
 
   def index
+    @user = User.find(params[:user_id])
     @rewards = Reward.all
   end
 
   def show
-    @reward = Reward.find(params[:id])
+    @user = User.find(params[:user_id])
+    @reward = @user.rewards.find(params[:reward_id])
   end
 
   def new
@@ -14,6 +16,8 @@ class RewardsController < ApplicationController
   end
 
   def create
-    @reward = @user.rewards.new
+    @user = User.find(params[:user_id])
+    @reward = @user.rewards.create(params[:reward])
+    redirect_to user_rewards_path
   end
 end

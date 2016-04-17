@@ -3,8 +3,8 @@
 
 <% @rewards.each do |reward| %>
     <div class="reward">
-      <%= link_to reward.name, reward_path(reward) %>: <%= reward.value %>
+      <%= reward.name%>: <%= reward.value %>
 
-      <%= button_to "Purchase", user_rewards_path %>
+      <%= link_to "Purchase"  %>
     </div>
 <% end %>

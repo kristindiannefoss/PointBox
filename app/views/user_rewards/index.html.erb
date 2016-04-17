@@ -1,8 +1,8 @@
-<!-- <h1>My Rewards</h1>
+<h1>My Rewards</h1>
 
 <% @user_rewards.each do |user_reward| %>
     <div class="user_reward">
-      <%= link_to user_reward.reward.name, user_reward_path(user_reward) %>: <%= user_reward.reward.value %>
+      <%= link_to user_reward.reward.name, user_reward_path(user_reward.reward) %>: <%= user_reward.reward.value %>
 
     </div>
-<% end %> -->
+<% end %>

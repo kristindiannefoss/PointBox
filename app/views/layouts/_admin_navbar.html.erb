@@ -3,21 +3,10 @@
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul>
-    <% if session[:user_id] && User.find(session[:user_id]).admin? %>
-
         <li><%= link_to "Users Index", admin_users_path %></li>
         <li><%= link_to "Rewards Shop", admin_rewards_path %></li>
-    <% else %>
         <li><%= link_to "PointBox Home", user_path(@user)  %></li>
         <li><%= link_to "Rewards Shop", user_rewards_path(@user), method: :get %></li>
-    <% end %>
-
-    <% if session[:user_id] %>
-        <li style="float:right"><%= link_to "Logout", logout_path, method: :delete %></li>
-    <% else %>
-        <li style="float:right"><%= link_to "Login", login_path %></li>
-        <li style="float:right"><%= link_to "Register", new_user_path %></li>
-    <% end %>
     </ul>
   </div>
 </nav>

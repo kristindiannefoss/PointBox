@@ -2,15 +2,16 @@ Rails.application.routes.draw do
   root to: 'sessions#new'
 
 resources :users, only: [:show, :new, :create]
-resources :rewards, only: [:show, :index]
+
 
 resources :users do
-  resources :rewards, only: [:new, :create]
+  resources :rewards, only: [:show, :index]
+  resources :user_rewards, only: [:new, :create, :index]
 end
 
 namespace "admin" do
   resources :rewards
-  resources :users, only: [:show, :index] do
+  resources :users do
     resources :points, only: [:new, :create, :show]
   end
 end
