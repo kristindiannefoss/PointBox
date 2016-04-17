@@ -8,4 +8,5 @@
   <% @user.user_rewards.each do |reward| %>
   <p><%= reward.name %>
     <% end %>
+    <%= link_to "Buy Rewards", new_user_reward_path(@user) %>
 </center>

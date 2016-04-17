@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
   end
 
   def spent_points
-    points.where("value < ?", 0).sum(:value).abs
+    points.where("value < 0").sum(:value).abs
   end
 end
