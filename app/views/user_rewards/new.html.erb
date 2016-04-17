@@ -1,0 +1,10 @@
+<center>
+<h1>Purchase Reward</h1>
+
+<%= form_for @user_reward do |f| %>
+<%= render partial: "shared/errors", locals: { target: @point } %>
+  <%= f.text_field :username, placeholder: "username" %>
+
+  <%= f.submit "Create Account" %>
+<% end %>
+</center>

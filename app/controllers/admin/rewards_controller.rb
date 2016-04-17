@@ -10,7 +10,8 @@ class Admin::RewardsController < Admin::BaseController
   end
 
   def create
-    @reward = Reward.new(reward_params)
+    @user   = User.find(params[:user_id])
+    @reward = @user.rewards.new(reward_params)
     if @reward.save
       flash[:notice] = "Reward Created!"
       redirect_to admin_rewards_path
@@ -18,6 +19,13 @@ class Admin::RewardsController < Admin::BaseController
       render :new
     end
   end
+
+  # def create
+  #   @user = User.find(params[:user_id])
+  #   @point = @user.points.create(point_params)
+  #
+  #   redirect_to user_path(@point)
+  # end
 
   def edit
     @reward = Reward.find(params[:id])

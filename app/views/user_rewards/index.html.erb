@@ -1,0 +1,8 @@
+<h1>My Rewards</h1>
+
+<% @user_rewards.each do |user_reward| %>
+    <div class="user_reward">
+      <%= link_to user_reward.name, user_reward_path(user_reward) %>: <%= user_reward.value %>
+
+    </div>
+<% end %>
