@@ -4,6 +4,6 @@
     <div class="reward">
       <%= link_to reward.name, reward_path(reward) %>: <%= reward.value %>
 
-      <%= button_to "Purchase", '/user_rewards', method: "get" %>
+      <%= button_to "Purchase", user_user_rewards_path, method: "get" %>
     </div>
 <% end %>
