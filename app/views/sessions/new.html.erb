@@ -1,9 +1,16 @@
-<h1>Please Sign In Or <%= link_to "Create Account", new_user_path %></h1>
 
 <center>
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.text_field :username, placeholder: "username" %>
-  <%= f.password_field :password, placeholder: "password" %>
-  <%= f.submit "Login" %>
-<% end %>
+  <div id="welcome box">
+    <h1 class="welcome">Welcome to PointBox</h1>
+  </div>
+
+  <div class="box">
+    <h3>Please Sign In Or <%= link_to "Create Account", new_user_path %></h3>
+
+    <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.text_field :username, placeholder: "username" %>
+    <%= f.password_field :password, placeholder: "password" %>
+    <%= f.submit "Login" %>
+    <% end %>
+  </div>
 </center>

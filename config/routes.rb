@@ -1,26 +1,23 @@
 Rails.application.routes.draw do
   root to: 'sessions#new'
 
-  resources :users, only: [:show, :new, :create] do
-    resources :rewards, only: [:show, :index]
+resources :users, only: [:show, :new, :create]
+resources :rewards, only: [:show, :index]
+
+resources :users do
+  resources :rewards, only: [:new, :create]
+end
+
+namespace "admin" do
+  resources :rewards
+  resources :users, only: [:show, :index] do
+    resources :points, only: [:new, :create, :show]
   end
+end
 
-  resources :users do
-    resources :rewards, only: [:new, :create]
-  end
-
-  # resources :user_rewards, only: [:new, :create]
-
-  namespace "admin" do
-    resources :rewards
-    resources :users, only: [:show, :index] do
-      resources :points, only: [:new, :create, :show]
-    end
-  end
-
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+get '/login', to: 'sessions#new'
+post '/login', to: 'sessions#create'
+delete '/logout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

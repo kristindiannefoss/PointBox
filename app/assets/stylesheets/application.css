@@ -2,6 +2,15 @@ body {
     font-family: sans-serif;
 }
 
+.welcome {
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #008060;
+  color: white;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 50px;
+}
 .navbar ul {
     list-style-type: none;
     margin: 0;

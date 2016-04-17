@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/navbar' %>
+
 
   <% flash.each do |name, msg| %>
     <p><center><%= content_tag :div, msg, :id => "flash_#{name}" %></center></p>
