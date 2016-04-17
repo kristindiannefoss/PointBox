@@ -4,5 +4,8 @@
 <h3>My Spent Points: <%= @user.spent_points %></h3>
 <h3>My Unspent Points: <%= @user.total_points %></h3>
 
-<h3>My Rewards</h3>
+<h3>My Rewards:</h3>
+  <% @user.user_rewards.each do |reward| %>
+  <p><%= reward.name %>
+    <% end %>
 </center>

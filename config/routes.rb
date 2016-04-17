@@ -5,13 +5,13 @@ Rails.application.routes.draw do
 
   resources :rewards, only: [:show, :index]
 
-  resources :user_rewards, only: [:show, :index, :create]
+  resources :user_rewards, only: [:show, :index, :create, :show]
 
   namespace "admin" do
     resources :rewards
     resources :users, only: [:show, :index, :show]
     resources :points, only: [:new, :create, :show]
-    resources :user_rewards, only: [:new, :create]
+    resources :user_rewards, only: [:new, :create, :edit, :destroy]
   end
 
   get '/login', to: 'sessions#new'

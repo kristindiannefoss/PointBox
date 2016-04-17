@@ -21,7 +21,7 @@ class Admin::PointsController < Admin::BaseController
   #
   #   redirect_to user_path(@point)
   # end
-end
+# end
 
   # def show
   #   user = User.find(session[:user_id])
