@@ -1,23 +1,27 @@
 class RewardsController < ApplicationController
+  before_action :set_user
 
   def index
-    @user = User.find(params[:user_id])
     @rewards = Reward.all
   end
 
+  def new
+    @reward = Reward.new
+  end
+
   def show
-    @user = User.find(params[:user_id])
     @reward = @user.rewards.find(params[:reward_id])
   end
 
-  def new
-    @user = User.find(params[:user_id])
-    @reward = @user.rewards.new
-  end
 
   def create
-    @user = User.find(params[:user_id])
-    @reward = @user.rewards.create(params[:reward])
+    @reward = @user.rewards.create(reward_params)
     redirect_to user_rewards_path
+  end
+
+private
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end

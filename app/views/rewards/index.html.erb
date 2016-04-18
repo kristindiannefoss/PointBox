@@ -1,10 +1,12 @@
   <%= render 'layouts/navbar'%>
 <h1>Rewards Shop</h1>
 
+<h3>Avaliable Points: <%= @user.total_points %><br>
+
 <% @rewards.each do |reward| %>
     <div class="reward">
       <%= reward.name%>: <%= reward.value %>
 
-      <%= button_to "Purchase", user_user_rewards_path(reward), method: :post %>
+      <%= button_to "Purchase", user_rewards_path(@user, reward), method: :post %>
     </div>
 <% end %>
