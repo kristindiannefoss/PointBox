@@ -1,17 +1,17 @@
-class UserRewardsController < ApplicationController
+class User::UserRewardsController < ApplicationController
   before_action :set_user #, only: [:create, ]
 
   def new
     # user = User.find(params[:user_id])
     # reward = Reward.find(params[:reward_id])
-    @user_reward = @user.user_rewards.new
+    @user_reward = UserReward.new
     redirect_to user_user_rewards_path(@user)
   end
 
   def create
     @user = current_user
     @reward = Reward.find(params[:reward_id])
-    @user_reward = @user.user_rewards.create(user_id: @user, reward_id: @reward)
+    @user_reward = UserReward.create(user_id: @user, reward_id: @reward)
     if @user_reward.save
         flash[:notice] = "Successfully Purchased"
         # redirect_to user_path(@user_reward.user_id)
@@ -23,11 +23,11 @@ class UserRewardsController < ApplicationController
   end
 
   def index
-    @user_rewards = @user.user_rewards
+    @user_rewards = UserReward.all
   end
 
   def show
-    @user_reward = @user.user_rewards.find(params[:id])
+    @user_reward = UserReward.find(params[:id])
   end
 
   private

@@ -6,8 +6,5 @@
 <h3>My Unspent Points: <%= @user.total_points %></h3>
 
 <h3>My Rewards:</h3>
-  <% @user.user_rewards.each do |reward| %>
-  <p><%= reward.name %>
-    <% end %>
     <%= link_to "My Rewards", user_user_rewards_path(@user) %>
 </center>

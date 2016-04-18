@@ -1,9 +1,10 @@
-  <!-- <%= render 'layouts/navbar' %>
+  <%= render 'layouts/navbar' %>
+
 <h1>My Rewards</h1>
 
 <% @user_rewards.each do |user_reward| %>
     <div class="user_reward">
-      <h3><%= user_reward.reward.name %>: <%= user_reward.reward.value %></h3>
+      <h3><%= user_reward.rewards.name %>: <%= user_reward.rewards.value %></h3>
 
     </div>
-<% end %> -->
+<% end %>
