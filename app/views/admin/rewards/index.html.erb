@@ -3,10 +3,11 @@
 
   <%= button_to "Create Reward", new_admin_reward_path, method: :get %>
 
-
+<center>
 <% @rewards.each do |reward| %>
     <div class="reward">
-      <%= link_to reward.name, user_reward_path(reward) %>: <%= reward.value %> points
+      <%= reward.name %>: <br>
+      <%= reward.value %> points
       <div>
       <%= button_to "Edit", edit_admin_reward_path(reward), method: :get %>
       </div>
@@ -15,3 +16,4 @@
       </div>
     </div>
 <% end %>
+</center>

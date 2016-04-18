@@ -3,7 +3,7 @@
   <h1> Assign Points </h1>
 
   <%= form_for @point, url:{:action=>'create'} do |f| %>
-    <%= number_field :point, :value, min: 1 %>
+    <%= f.text_field :value, placeholder: "value" %>
 
 
     <%= f.submit "Assign" %>

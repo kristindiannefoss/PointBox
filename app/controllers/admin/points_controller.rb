@@ -5,7 +5,7 @@ class Admin::PointsController < Admin::BaseController
   end
 
   def create
-    @point = User.find(point_params["user_id"]).points.new(point_params)
+    @point = User.find(params[:user_id]).points.create(point_params)
 
     if @point.save
       flash[:notice] = "Point Saved"

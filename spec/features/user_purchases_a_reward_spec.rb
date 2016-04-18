@@ -8,13 +8,12 @@ RSpec.feature "User purchases a reward" do
 
       reward = Reward.create(name: "Cake", value: 2)
 
-      points = Point.create(value: 10, user_id: user.id)
+      # points = Point.create(value: 10, user_id: user.id)
 
-byebug
       visit rewards_path
       click_button "Purchase"
-      save_and_open_page
-      expect(page).to have_content("My Rewards")
 
+      expect(page).to have_content("My Rewards")
+      expect(page).to have_content("Cake")
     end
 end

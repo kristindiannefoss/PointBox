@@ -20,7 +20,6 @@ class Admin::RewardsController < Admin::BaseController
     end
   end
 
-
   def edit
     @reward = Reward.find(params[:id])
   end
@@ -38,6 +37,9 @@ class Admin::RewardsController < Admin::BaseController
   def destroy
     @reward.destroy
     redirect_to admin_rewards_path
+  end
+
+  def show
   end
 
   private

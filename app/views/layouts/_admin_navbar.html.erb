@@ -5,8 +5,8 @@
     <ul>
         <li><%= link_to "Users Index", admin_users_path %></li>
         <li><%= link_to "Rewards Shop", admin_rewards_path %></li>
-        <li><%= link_to "PointBox Home", user_path(@user)  %></li>
-        <li><%= link_to "Rewards Shop", user_rewards_path(@user), method: :get %></li>
+
+        <li style="float:right"><%= link_to "Logout", logout_path, method: :delete %></li>
     </ul>
   </div>
 </nav>

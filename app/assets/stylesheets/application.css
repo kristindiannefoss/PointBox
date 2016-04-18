@@ -2,6 +2,12 @@ body {
     font-family: sans-serif;
 }
 
+table, th, td {
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
 .welcome {
   padding: 10px;
   margin-bottom: 20px;
@@ -53,9 +59,17 @@ body {
   line-height: 20px;
 }
 
-#reward {
+div.reward {
   float: left;
   display: inline-block;
+  padding: 20px;
+  margin: 20px;
+  border: 2px solid black;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+  width: 150px;
+  height: 100px;
 
 }
 
