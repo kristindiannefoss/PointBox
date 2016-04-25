@@ -9,9 +9,10 @@ class UserRewardsController < ApplicationController
   end
 
   def create
+    # byebug
     @user = current_user
     @reward = Reward.find(params[:reward_id])
-    @user_reward = @user.user_rewards.create(user_id: @user, reward_id: @reward)
+    @user_reward = @user.user_rewards.create(user_id: @user, reward_id: @reward.id)
     if @user_reward.save
         flash[:notice] = "Successfully Purchased"
         # redirect_to user_path(@user_reward.user_id)

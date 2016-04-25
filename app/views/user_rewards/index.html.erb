@@ -2,9 +2,9 @@
 
 <h1>My Rewards</h1>
 
-<% @user_rewards.each do |user_reward| %>
+<% @user.rewards.each do |reward| %>
     <div class="user_reward">
-      <h3><%= user_reward.rewards.name %>: <%= user_reward.rewards.value %></h3>
+      <h3><%= reward.name %>: <%= reward.value %></h3>
 
     </div>
 <% end %>

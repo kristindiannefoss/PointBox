@@ -17,6 +17,7 @@ end
 
 post '/users/:user_id/rewards/:id', to: "user_rewards#create", as: :buy_user_reward
 
+
 get '/login', to: 'sessions#new'
 post '/login', to: 'sessions#create'
 delete '/logout', to: 'sessions#destroy'

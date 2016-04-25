@@ -9,9 +9,5 @@
 
       <%= button_to "Purchase", user_user_rewards_path({user_id: @user.id, reward_id: reward.id}), method: :post %>
 
-      <%= form_for(:user_reward, url: user_user_rewards_path(@user, reward)) do |f|%>
-
-      <%= f.submit "Buy" %>
-      <% end %>
     </div>
 <% end %>
