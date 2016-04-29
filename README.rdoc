@@ -1,28 +1,28 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Project Option 3: PointBox
 
-Things you may want to cover:
+Create an app where an admin (let's say for example, Richard) can assign points to users and users can redeem those points for rewards. Host your app live on Heroku.
 
-* Ruby version
+#### Points
 
-* System dependencies
+* points can be created ("assigned to a user") and destroyed only by the admin
+* users can see their total number of points on their dashboard
 
-* Configuration
+#### Rewards
 
-* Database creation
+* rewards can be created, edited, updated, and destroyed only by the admin
+* the list of possible rewards can be seen by regular users
 
-* Database initialization
+#### Authentication and Authorization
 
-* How to run the test suite
+* users need to log in to see their points and rewards
+* users can only see their own points and rewards -- they should not be able to visit another user's page
+* users cannot add points to their account, nor can they create new rewards to add to the list
+* a user cannot redeem another user's points
+* admin can create a user
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Extensions
 
-* Deployment instructions
+* TDD using RSpec instead of Test::Unit
 
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
